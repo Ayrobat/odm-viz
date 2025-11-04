@@ -1,0 +1,3 @@
+[submodule "packages/wasm/LAStools"]
+	path = packages/wasm/LAStools
+	url = https://github.com/LAStools/LAStools

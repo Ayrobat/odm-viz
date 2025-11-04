@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+}
+
+canvas {
+  display: block;
+}
+
+.overlay-ui {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Ubuntu,
+    Cantarell,
+    Noto Sans,
+    Helvetica Neue,
+    Arial,
+    'Apple Color Emoji',
+    'Segoe UI Emoji';
+}
+
+.overlay-ui input[type='range'] {
+  width: 160px;
+}
+
+.overlay-loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  z-index: 1001;
+}
+
+.overlay-top-right {
+  top: 12px;
+  right: 12px;
+  bottom: auto;
+  left: auto;
+}
+
+@media (max-width: 768px) {
+  .overlay-ui {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  .overlay-ui input[type='range'] {
+    width: 120px;
+  }
+}

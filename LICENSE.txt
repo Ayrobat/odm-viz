@@ -1,0 +1,34 @@
+The main components of the ODM Viz project (excluding third-party dependencies as noted below) are licensed under the MIT License.
+Copyright (c) 2025 Anwar Ali Ahmad
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+THIRD-PARTY DEPENDENCY NOTICE:
+
+The 'packages/wasm' module includes code from the **LASzip** and **LASlib** libraries, which are part of the LAStools project (rapidlasso GmbH).
+
+These libraries are distributed under a mix of permissive licenses:
+1. **Apache License, Version 2.0.** (For LASzip core)
+2. **GNU Lesser General Public License (LGPL), Version 2.1.** (For LASlib API)
+
+Due to linking requirements, the source code used for the WASM component is considered governed by the LGPL 2.1 terms.
+
+Source code and license texts for these components are provided via Git Submodule and in the 'licenses/' directory.
