@@ -1,6 +1,7 @@
-# ODM Viz: High-Performance 3D Visualization
+# ODM Viz
+<img width="2391" height="1172" alt="image" src="https://github.com/user-attachments/assets/9416ba9a-8126-4ad5-87ca-f3e1ddc665a6" />
 
-An experimental 3D viz monorepo focused on geospatial data, particularly point clouds. Leveraging WebAssembly (WASM) and Three.js with React Three Fiber, its current MVP and motivation is to provide a simple `.LAZ` file decoder with a pipeline to a real-time point cloud viewer.
+Just a personal sandbox mashing together turborepo, r3f, wasm and more. Currently focused on 3D viz for point clouds. Currently provides a simple `.LAZ` file decoder with a pipeline to a real-time point cloud viewer.
 
 - **Turborepo** for optimized monorepo management
 - **WebAssembly** via Emscripten for near-native performance
