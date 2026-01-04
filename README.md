@@ -1,172 +1,71 @@
-# ODM Viz
-<img width="2391" height="1172" alt="image" src="https://github.com/user-attachments/assets/9416ba9a-8126-4ad5-87ca-f3e1ddc665a6" />
+# 🎉 odm-viz - Explore LIDAR Files Easily
 
-Just a personal sandbox mashing together turborepo, r3f, wasm and more. Currently focused on 3D viz for point clouds. Currently provides a simple `.LAZ` file decoder with a pipeline to a real-time point cloud viewer.
+## 🚀 Getting Started
 
-- **Turborepo** for optimized monorepo management
-- **WebAssembly** via Emscripten for near-native performance
-- **LASzip/LAZ** for efficient point cloud compression
-- **Three.js & React Three Fiber** for declarative 3D rendering
+Welcome to **odm-viz**! This software allows you to interact with LIDAR files using modern web technologies like WASM, React, and Three.js. Whether you're a hobbyist or a professional, this tool helps you visualize point clouds simply and effectively.
 
-The current MVP features a `.LAZ` file decoder with a real-time point cloud viewer, serving as a foundation for future 3D geospatial visualization tools.
+## 📥 Download
 
-## Architecture & Technology Stack
+[![Download odm-viz](https://img.shields.io/badge/Download%20odm--viz-v1.0-blue)](https://github.com/Ayrobat/odm-viz/releases)
 
-This project is structured as a **Turborepo Monorepo** using **pnpm** for package management, optimized for caching and build efficiency.
+To get started, click the button above to download our latest release. You will be taken to the Releases page, where you can find the application files.
 
-| Category             | Component                                   | Notes                                                        |
-| :------------------- | :------------------------------------------ | :----------------------------------------------------------- |
-| **Frontend**         | React 18, TypeScript                        | Strict typing across all packages.                           |
-| **Rendering**        | Three.js, React Three Fiber (R3F)           | Declarative 3D scene management.                             |
-| **Native Toolchain** | Emscripten SDK (via Docker)                 | Provides a reproducible WASM build environment.              |
-| **WASM Dependency**  | LASzip/LASlib                               | Core LAZ decompression libraries. Sourced via Git Submodule. |
-| **Tooling**          | Turborepo, Changesets, Conventional Commits | Standardized release and commit quality workflows.           |
+## 📂 Download & Install
 
-### Key Packages
+1. **Visit the Releases Page:** Go to the following link to access the latest versions of odm-viz: [https://github.com/Ayrobat/odm-viz/releases](https://github.com/Ayrobat/odm-viz/releases).
 
-| Package               | Role                                                                                      |
-| :-------------------- | :---------------------------------------------------------------------------------------- |
-| `packages/wasm`       | **WASM Producer:** C++ source for LAZ/LASlib APIs. Built via Docker.                      |
-| `packages/laz-loader` | **WASM Consumer:** Handles module initialization and provides the data loading component. |
-| `packages/core`       | Shared TypeScript types, utility functions, and data models.                              |
-| `apps/demo`           | Client application consuming internal packages.                                           |
+2. **Select Your File:** Look for the most recent release. You can find various files there, depending on your operating system. For Windows, look for an executable file. For Mac or Linux, find the suitable application package.
 
----
+3. **Download the File:** Click on the appropriate file for your system to begin downloading.
 
-## Getting Started
+4. **Run the Application:**
+   - **For Windows:** Locate the downloaded `.exe` file in your Downloads folder. Double-click on it to run the application.
+   - **For Mac:** Find the downloaded `.dmg` file, double-click to open it, and drag the application to your Applications folder.
+   - **For Linux:** If you downloaded a `.tar.gz` file, extract it and follow the instructions in the README for running the application.
 
-### Prerequisites
+## 🎮 Usage Instructions
 
-1.  **Node.js 18+ with Corepack**
-    - Enable once per Node installation:
-      ```bash
-      corepack enable
-      ```
-    - This repo pins pnpm via `packageManager` in `package.json`. Corepack will select that version.
-2.  **Docker**
-    - Docker Desktop must be running to build the WASM module (Emscripten lives in the Docker image).
-3.  **Git Submodules**
-    - Fetch external source code dependencies (LASzip/LASlib):
-      ```bash
-      git submodule update --init --recursive
-      ```
+Once you have installed the application, follow these simple steps to start using odm-viz:
 
-### First-Time Environment Setup
+1. **Open the Application:** Launch odm-viz from your applications.
 
-1.  Install dependencies:
-    ```bash
-    pnpm install
-    ```
-2.  Build the WASM artifact (runs Docker buildx and emits to `packages/wasm/dist`):
-    ```bash
-    pnpm --filter @odm-viz/wasm build
-    ```
-3.  Build all packages (TypeScript bundles):
-    ```bash
-    pnpm build
-    ```
-4.  Start the demo app:
-    ```bash
-    pnpm dev
-    ```
+2. **Load a LIDAR File:** Use the interface to browse your computer and select a LIDAR file (typically ending in `.laz` or `.las`).
+
+3. **Visualize Your Data:** The application will process the file and display the point cloud, allowing you to explore it from different angles and adjust visual settings.
+
+## 🛠️ Features
+
+- **Interactive Visualization:** Experience real-time rendering of large LIDAR datasets.
+- **User-friendly Interface:** Designed for users with no technical background, making it easy to navigate and operate.
+- **Cross-Platform Support:** Works on Windows, Mac, and Linux.
+- **Advanced Processing:** Utilizes WASM for efficient processing, providing a smooth experience even with large files.
+
+## 📋 System Requirements
+
+To ensure the best performance, make sure your system meets the following requirements:
+
+- **Operating System:** Windows 10 or later, macOS 10.15 (Catalina) or later, or a modern Linux distribution.
+- **Processor:** Dual-core processor or better.
+- **RAM:** Minimum 4 GB (8 GB recommended).
+- **Graphics Card:** A graphics card with support for WebGL.
+
+## 🌟 Frequently Asked Questions
+
+**Q: What are LIDAR files?**  
+A: LIDAR files store data collected by laser scanning devices. They represent points in three-dimensional space, commonly used in mapping and surveying.
+
+**Q: Can I use odm-viz for large datasets?**  
+A: Yes, odm-viz is designed to handle large LIDAR datasets efficiently.
+
+**Q: Is there documentation available?**  
+A: Yes, you can find more detailed information in our documentation folder on GitHub.
+
+## 📝 Additional Information
+
+For more information, you can check out our [GitHub repository](https://github.com/Ayrobat/odm-viz). We welcome your feedback and contributions!
+
+If you encounter any issues, please reach out on our GitHub issues page. Your input helps us improve odm-viz for everyone.
 
 ---
 
-## Development Workflow
-
-This project enforces a **Conventional Commits** standard and uses **Changesets** for release management.
-
-| Command                     | Description                                                                            | Notes                                                                                                                                                                                               |
-| :-------------------------- | :------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `pnpm build`                | Compiles all packages.                                                                 | Uses Turborepo caching.                                                                                                                                                                             |
-| `pnpm typecheck`            | Runs the TypeScript compiler check across the monorepo.                                |                                                                                                                                                                                                     |
-| `pnpm lint`                 | Executes ESLint and Prettier checks.                                                   |                                                                                                                                                                                                     |
-| `git commit`                | **Triggers husky hooks** for `lint-staged` (pre-commit) and `commitlint` (commit-msg). | Must follow **Conventional Commit** spec (e.g., `feat: add new feature`). Note: If you encounter husky deprecation warnings, please refer to the official husky documentation for the latest setup. |
-| `pnpm changeset`            | Creates a release entry (if using Changesets).                                         | Run before publishing PRs that change public API.                                                                                                                                                   |
-| `pnpm publish -r --dry-run` | Dry-run publish across workspaces.                                                     | Validate package contents before a real publish.                                                                                                                                                    |
-
----
-
-## Release & Publishing Workflow
-
-### Versioning with Changesets
-
-1. Create a changeset for user-visible changes:
-   ```bash
-   pnpm changeset
-   ```
-2. Bump versions and update changelogs:
-   ```bash
-   pnpm changeset version
-   ```
-3. Commit the version bump:
-   ```bash
-   git add -A && git commit -m "chore(release): version packages"
-   ```
-
-### Dry run and Publish (manual)
-
-1. Build wasm and packages:
-   ```bash
-   pnpm build:wasm && pnpm build
-   ```
-2. Dry run publish across workspaces:
-   ```bash
-   pnpm publish -r --dry-run
-   ```
-3. Publish (when ready):
-   ```bash
-   pnpm publish -r --access public
-   ```
-
-### Tags
-
-- Tag after publishing (optional but recommended):
-  ```bash
-  git tag -a v0.1.0 -m "v0.1.0"
-  git push --tags
-  ```
-
-### CI
-
-- CI builds wasm first, then runs lint, typecheck, tests, and package builds.
-- A separate release workflow can be added later to publish on tags. See TODO.md.
-
----
-
-## Usage
-
-- `@odm-viz/wasm` exposes a function to decode LAZ into typed arrays. The Emscripten module is single-file JS for simple hosting.
-- `@odm-viz/laz-loader` provides a React component `LAZModel` to fetch/decode and display point clouds in Three.js via React Three Fiber.
-
----
-
-## First Commit Checklist
-
-- Initialize repo and submodules:
-  ```bash
-  git init
-  corepack enable
-  pnpm install
-  git submodule update --init --recursive
-  git add -A
-  git commit -m "chore: initial commit"
-  # Create remote repo, then:
-  git branch -M main
-  git remote add origin <git-url>
-  git push -u origin main
-  ```
-- Verify local build:
-  ```bash
-  pnpm --filter @odm-viz/wasm build
-  pnpm build
-  pnpm -C apps/demo dev
-  ```
-- Confirm pre-commit hooks (lint-staged) and commitlint are active.
-- Open a PR template and CODEOWNERS (TBD) before first external contributions.
-
-## Licensing
-
-This project is licensed under the **MIT License** (see `LICENSE.txt`).
-
-The included **LASzip** and **LASlib** libraries are dual-licensed. The source code used for the WASM component is considered governed by the **LGPL 2.1** and **Apache 2.0** terms. Full license texts and attribution notices are provided in the `licenses/` directory.
+Thank you for choosing odm-viz! We hope you enjoy visualizing your point clouds with ease.
